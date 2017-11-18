@@ -1,80 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.kevin.hamburguesas.Login"
-    android:background="@color/colorPrimary">
-
+    android:background="@color/colorPrimary"
+    >
     <TextView
         android:id="@+id/title"
         style="@style/TituloLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="20dp"/>
+
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="25dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="ImagenLogin"
         android:src="@drawable/hamburger_icon"
-        android:contentDescription="ImagenLogin"/>
+        android:id="@+id/icon"
+        android:layout_marginBottom="40dp"
+        />
+
     <EditText
         android:id="@+id/user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:background="@color/White"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/icon"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:elevation="2.5dp"
+        android:background="@color/White"
+        android:ems="10"
+        android:hint="Email o Nombre de usuario"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:hint="Email o Nombre de usuario"
-        android:inputType="textEmailAddress" />
+        android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:background="@color/White"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/user_email"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="2.5dp"
+        android:background="@color/White"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
-    <TextView
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/password"
+        android:background="@color/colorAccent"
+        android:elevation="2dp"
+        android:text="ENTRAR"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_login"
+        android:gravity="center_horizontal"
+        android:shadowDx="7"
+        android:shadowDy="2"
         android:text="Ó"
         android:textColor="#000"
-        android:shadowDy="2"
-        android:shadowDx="7"
         android:textSize="15sp"
-        android:gravity="center_horizontal"
         android:layout_marginBottom="10dp"/>
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:background="@color/colorAccent"
+        android:layout_alignEnd="@+id/btn_login"
+        android:layout_alignStart="@+id/btn_login"
+        android:layout_below="@+id/textView"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="2dp"
         android:text="REGÍSTRATE AQUÍ"
         android:textSize="15sp"
-        android:elevation="2.5dp"/>
+        android:textColor="@color/White"/>
 
-</LinearLayout>
+</RelativeLayout>
