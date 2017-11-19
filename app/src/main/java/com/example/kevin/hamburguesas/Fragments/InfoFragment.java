@@ -1,20 +1,18 @@
-package com.example.kevin.hamburguesas;
+package com.example.kevin.hamburguesas.Fragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.kevin.hamburguesas.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link InfoFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
 public class InfoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
@@ -28,8 +26,12 @@ public class InfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false);
+        super.onCreateView(inflater,container,savedInstanceState);
+        View v = inflater.inflate(R.layout.fragment_info, container, false);
+
+        return v;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

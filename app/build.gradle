@@ -3,8 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
 
-    dexOptions{
-        incremental true
+    dexOptions {
         maxProcessCount 4
         javaMaxHeapSize "2g"
     }
