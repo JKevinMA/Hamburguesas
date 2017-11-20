@@ -20,7 +20,7 @@
             style="@style/AppTheme"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="220dp"
             android:orientation="horizontal">
             <ListView
                 android:id="@+id/contenedorElementos"
@@ -33,15 +33,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
                 <ImageButton
-                    android:id="@+id/reiniciar"
+                    android:id="@+id/agregar"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_replay"
-                    android:background="@drawable/bordes"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bordes"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_replay" />
             </LinearLayout>
 
         </LinearLayout>
