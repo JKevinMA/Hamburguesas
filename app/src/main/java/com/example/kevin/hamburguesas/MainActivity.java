@@ -1,6 +1,8 @@
 package com.example.kevin.hamburguesas;
 
 import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,16 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.kevin.hamburguesas.Fragments.CreacionFragment;
 import com.example.kevin.hamburguesas.Fragments.InfoFragment;
+import com.example.kevin.hamburguesas.Fragments.NuevosFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         InfoFragment.OnFragmentInteractionListener,
-        CreacionFragment.OnFragmentInteractionListener{
-
+        CreacionFragment.OnFragmentInteractionListener,
+        NuevosFragment.OnFragmentInteractionListener{
+    FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,15 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Agregando elemento", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -83,13 +97,14 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Mi perfil", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_compras) {
             getSupportActionBar().setTitle(item.getTitle());
-            Toast.makeText(this, "Mis Compras", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nueva Compra", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_creaciones) {
             fragment = new CreacionFragment();
             FragmentTransaction = true;
-            Toast.makeText(this, "Mis Creaciones", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nueva Creación", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_comunidad) {
-            getSupportActionBar().setTitle(item.getTitle());
+            fragment = new NuevosFragment();
+            FragmentTransaction = true;
             Toast.makeText(this, "Otras Creaciones", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_aplicacion) {
             fragment = new InfoFragment();
