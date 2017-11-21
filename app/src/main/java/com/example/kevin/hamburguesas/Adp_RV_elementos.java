@@ -35,7 +35,8 @@ public class Adp_RV_elementos extends RecyclerView.Adapter<ViewHolder>{
         holder.title.setText(ListaObjeto.get(position).getNombre());
         holder.tv_descripcion.setText(ListaObjeto.get(position).getDescripcion());
         holder.tv_tipo.setText(ListaObjeto.get(position).getTipo());
-        holder.tv_precio.setText(""+ListaObjeto.get(position).getPrecio());
+
+        holder.tv_precio.setText(String.format("%.2f", ListaObjeto.get(position).getPrecio()));
         holder.imagen.setImageBitmap(ListaObjeto.get(position).getImagen());
     }
 

@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             //el proceso finaliza
-            final GlobalClass globalVariable = (GlobalClass) getApplicationContext();
-            globalVariable.setElementosTodos(lista);
+            GlobalClass.setElementosTodos(lista);
+            Log.d("SIZE",""+GlobalClass.getElementosTodos().size() );
             dg.dismiss();
         }
         @Override

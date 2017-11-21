@@ -22,7 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:paddingBottom="46dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="TITULO"
+                    android:textAllCaps="true"
                     android:textColor="#FFFFFF"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -63,7 +66,7 @@
 
             <TextView
                 android:id="@+id/tv_tipo"
-                android:layout_width="188dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="TIPO" />

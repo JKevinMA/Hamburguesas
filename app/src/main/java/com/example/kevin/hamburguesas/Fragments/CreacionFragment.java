@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.kevin.hamburguesas.Beans.Elemento;
+import com.example.kevin.hamburguesas.ElementosActivity;
 import com.example.kevin.hamburguesas.ElijeElemento;
 import com.example.kevin.hamburguesas.JSONParser;
 import com.example.kevin.hamburguesas.MainActivity;
@@ -49,7 +50,7 @@ public class CreacionFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(getActivity(), ElijeElemento.class);
+                Intent it = new Intent(getActivity(), ElementosActivity.class);
                 startActivity(it);
             }
         });
