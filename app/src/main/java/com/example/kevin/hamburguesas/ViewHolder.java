@@ -1,6 +1,7 @@
 package com.example.kevin.hamburguesas;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,14 +17,14 @@ import java.util.List;
  */
 
 public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
+    Button btn_add;
     TextView title,tv_precio,tv_descripcion,tv_tipo;
     ImageView imagen;
     List<Elemento> ListaObjeto;
 
     public ViewHolder(View itemView, List<Elemento> datos) {
         super(itemView);
-
+        btn_add = (Button)itemView.findViewById(R.id.btn_add);
         title = (TextView)itemView.findViewById(R.id.title);
         tv_precio = (TextView)itemView.findViewById(R.id.tv_precio);
         tv_descripcion = (TextView)itemView.findViewById(R.id.tv_descripcion);
@@ -35,11 +36,10 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
     @Override
     public void onClick(View view) {
         int position = getAdapterPosition();
-//        Fuente objeto = ListaObjeto.get(position);
-//        if (view.getId()==btn1.getId()){
-//            Toast.makeText(btn1.getContext(), "Seleccionó el botón 1 del Item "+position+" correspondiente al título "+objeto.getTitulo() , Toast.LENGTH_SHORT).show();
-//        }else{
-//            Toast.makeText(btn1.getContext(), "Seleccionó el botón 2 del Item "+position+" correspondiente al título "+objeto.getTitulo(), Toast.LENGTH_SHORT).show();
-//        }
+        Elemento objeto = ListaObjeto.get(position);
+        Log.d("BOTON","SÍ");
+        if (view.getId() == btn_add.getId()){
+            Toast.makeText(btn_add.getContext(), "Seleccionó el botón 1 del Item "+position+" correspondiente al título "+objeto.getNombre()+" y al ID "+objeto.getId() , Toast.LENGTH_SHORT).show();
+        }
     }
 }

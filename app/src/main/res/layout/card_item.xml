@@ -43,8 +43,16 @@
                     android:textColor="#FFFFFF"
                     android:textSize="14dp"
                     android:textStyle="bold" />
-
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginRight="5dp"
+                android:text="Agregar" />
+
         </FrameLayout>
 
         <LinearLayout

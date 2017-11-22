@@ -57,11 +57,6 @@ public class CreacionFragment extends Fragment {
         return v;
     }
 
-
-    public void agregar(View v){
-        Intent it = new Intent(getActivity(), ElijeElemento.class);
-        startActivity(it);
-    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

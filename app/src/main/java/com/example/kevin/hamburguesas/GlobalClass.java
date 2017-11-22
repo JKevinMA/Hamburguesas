@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.example.kevin.hamburguesas.Beans.Elemento;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,14 +38,17 @@ public class GlobalClass extends Application {
     }
 
     public static void dividir(List<Elemento> elementosTodos){
-        Log.d("SizeTODO: ",""+elementosTodos.size());
+        ElementosPrincipales = new ArrayList<>();
+        ElementosPanes = new ArrayList<>();
+        Elementosaniadidos = new ArrayList<>();
         for (int i=0;i<elementosTodos.size();i++){
-            if (elementosTodos.get(i).getTipo()=="Pan"){
+            if (elementosTodos.get(i).getTipo().equals("Pan")){
+                ElementosPanes.add(elementosTodos.get(i));
             }
-            else if (elementosTodos.get(i).getTipo()=="Principal"){
+            else if (elementosTodos.get(i).getTipo().equals("Principal")){
                 ElementosPrincipales.add(elementosTodos.get(i));
             }
-            else if (elementosTodos.get(i).getTipo()=="Añadidos"){
+            else if (elementosTodos.get(i).getTipo().equals("Añadidos")){
                 Elementosaniadidos.add(elementosTodos.get(i));
             }
         }
